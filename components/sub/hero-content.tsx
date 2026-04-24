@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 export const HeroContent = () => {
   return (
@@ -15,45 +16,39 @@ export const HeroContent = () => {
         <div className="orbit-container animate-revolve">
           {/* Black Hole 1: Skills */}
           <Link href="#skills" className="blackhole-orb orb-1">
-            <div className="w-full h-full flex justify-center items-center animate-counter-revolve">
-              <video
-                autoPlay
-                muted
-                loop
-                className="orb-video"
-              >
-                <source src="/videos/blackhole.webm" type="video/webm" />
-              </video>
+            <div className="w-full h-full flex justify-center items-center animate-counter-revolve relative">
+              <Image
+                src="/ships/ship1.png"
+                alt="Spaceship 1"
+                fill
+                className="object-cover opacity-80 z-[1]"
+              />
               <span className="orb-text">Skills</span>
             </div>
           </Link>
 
           {/* Black Hole 2: About me */}
           <Link href="#about-me" className="blackhole-orb orb-2">
-            <div className="w-full h-full flex justify-center items-center animate-counter-revolve">
-              <video
-                autoPlay
-                muted
-                loop
-                className="orb-video"
-              >
-                <source src="/videos/blackhole.webm" type="video/webm" />
-              </video>
+            <div className="w-full h-full flex justify-center items-center animate-counter-revolve relative">
+              <Image
+                src="/ships/ship2.png"
+                alt="Spaceship 2"
+                fill
+                className="object-cover opacity-80 z-[1]"
+              />
               <span className="orb-text text-center">About me</span>
             </div>
           </Link>
 
           {/* Black Hole 3: Projects */}
           <Link href="#projects" className="blackhole-orb orb-3">
-            <div className="w-full h-full flex justify-center items-center animate-counter-revolve">
-              <video
-                autoPlay
-                muted
-                loop
-                className="orb-video"
-              >
-                <source src="/videos/blackhole.webm" type="video/webm" />
-              </video>
+            <div className="w-full h-full flex justify-center items-center animate-counter-revolve relative">
+              <Image
+                src="/ships/ship3.png"
+                alt="Spaceship 3"
+                fill
+                className="object-cover opacity-80 z-[1]"
+              />
               <span className="orb-text">Projects</span>
             </div>
           </Link>
