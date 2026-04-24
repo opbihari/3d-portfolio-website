@@ -64,13 +64,20 @@ export const SOCIALS = [
   },
 ] as const;
 
-export const FRONTEND_SKILL = [] as const;
+type Skill = {
+  skill_name: string;
+  image: string;
+  width: number;
+  height: number;
+};
 
-export const BACKEND_SKILL = [] as const;
+export const FRONTEND_SKILL: Skill[] = [];
 
-export const FULLSTACK_SKILL = [] as const;
+export const BACKEND_SKILL: Skill[] = [];
 
-export const OTHER_SKILL = [] as const;
+export const FULLSTACK_SKILL: Skill[] = [];
+
+export const OTHER_SKILL: Skill[] = [];
 
 export const PROJECTS = [
   {
