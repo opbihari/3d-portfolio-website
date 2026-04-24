@@ -1,7 +1,14 @@
+"use client";
+
+import { useState } from "react";
 import { ProjectCard } from "@/components/sub/project-card";
+import { ProjectModal } from "@/components/sub/project-modal";
 import { PROJECTS } from "@/constants";
+import { AnimatePresence } from "framer-motion";
 
 export const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState<typeof PROJECTS[number] | null>(null);
+
   return (
     <section
       id="projects"
@@ -17,10 +24,19 @@ export const Projects = () => {
             src={project.image}
             title={project.title}
             description={project.description}
-            link={project.link}
+            onClick={() => setSelectedProject(project)}
           />
         ))}
       </div>
+
+      <AnimatePresence>
+        {selectedProject && (
+          <ProjectModal
+            project={selectedProject as any}
+            onClose={() => setSelectedProject(null)}
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 };

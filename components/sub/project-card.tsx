@@ -1,25 +1,22 @@
 import Image from "next/image";
-import Link from "next/link";
 
 type ProjectCardProps = {
   src: string;
   title: string;
   description: string;
-  link: string;
+  onClick: () => void;
 };
 
 export const ProjectCard = ({
   src,
   title,
   description,
-  link,
+  onClick,
 }: ProjectCardProps) => {
   return (
-    <Link
-      href={link}
-      target="_blank"
-      rel="noreferrer noopener"
-      className="relative overflow-hidden rounded-lg shadow-lg border border-[#2A0E61]"
+    <div
+      onClick={onClick}
+      className="relative overflow-hidden rounded-lg shadow-lg border border-[#2A0E61] cursor-pointer transition-transform hover:scale-105"
     >
       <Image
         src={src}
@@ -33,6 +30,6 @@ export const ProjectCard = ({
         <h1 className="text-2xl font-semibold text-white">{title}</h1>
         <p className="mt-2 text-gray-300">{description}</p>
       </div>
-    </Link>
+    </div>
   );
 };
