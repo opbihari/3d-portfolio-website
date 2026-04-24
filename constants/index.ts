@@ -92,7 +92,11 @@ export const PROJECTS = [
     description: "A security-focused project that analyzes server logs to identify potential Distributed Denial of Service (DDoS) attacks. It processes raw text logs, counts IP requests, and flags suspicious activity.",
     image: "/projects/project-2.png",
     link: "https://github.com/opbihari/python-portfolio/tree/main/DDoS_Detector_Project",
-    runUrl: "https://github.com/opbihari/python-portfolio/tree/main/DDoS_Detector_Project",
+    runOptions: [
+      { name: "Run DDoS Detector", url: "https://github.com/opbihari/python-portfolio/blob/main/DDoS_Detector_Project/01_DDoS_Detector.py" },
+      { name: "Run Firewall Server", url: "https://github.com/opbihari/python-portfolio/blob/main/DDoS_Detector_Project/02_Firewall_Server.py" },
+      { name: "Run Log Generator", url: "https://github.com/opbihari/python-portfolio/blob/main/DDoS_Detector_Project/03_Log_Entry_Generator.py" }
+    ],
   },
   {
     title: "IP Blacklist Checker",

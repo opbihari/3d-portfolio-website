@@ -12,6 +12,7 @@ type ProjectModalProps = {
     image: string;
     link: string;
     runUrl?: string;
+    runOptions?: { name: string; url: string }[];
     embedUrl?: string;
   } | null;
   onClose: () => void;
@@ -102,7 +103,28 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
           )}
 
           <div className="mt-4 flex flex-wrap gap-4">
-            {project.runUrl && (
+            {project.runOptions ? (
+              project.runOptions.map((option, index) => (
+                <Link
+                  key={index}
+                  href={option.url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-purple-600 to-cyan-600 px-6 py-3 font-semibold text-white shadow-lg transition-transform hover:scale-105"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  {option.name}
+                </Link>
+              ))
+            ) : project.runUrl ? (
               <Link
                 href={project.runUrl}
                 target="_blank"
@@ -120,7 +142,7 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 </svg>
                 {project.embedUrl ? "Open Fullscreen" : "Run Project"}
               </Link>
-            )}
+            ) : null}
             
             <Link
               href={project.link}
